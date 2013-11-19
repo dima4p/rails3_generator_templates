@@ -7,7 +7,7 @@ describe "<%= ns_table_name %>/edit.html.<%= options[:template_engine] %>" do
   before(:each) do
     controller.stub!(:can?).and_return(true)
 <% if options[:fixture_replacement] == :factory_girl -%>
-    @<%= ns_² %> = assign(:<%= ns_file_name %>, create(:<%= ns_file_name %>))
+    @<%= ns_file_name %> = assign(:<%= ns_file_name %>, create(:<%= ns_file_name %>))
 <% else -%>
     @<%= ns_file_name %> = assign(:<%= ns_file_name %>, stub_model(<%= class_name %><%= output_attributes.empty? ? '))' : ',' %>
 <% output_attributes.each_with_index do |attribute, attribute_index| -%>
